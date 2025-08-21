@@ -1,0 +1,3 @@
+marketplace,sku,url,desired_price,rise_alert_pct,drop_alert_pct,notes
+wb,234785096,,0,0,5,Твой пример WB nmId
+ozon,,https://www.ozon.ru/product/zephyx-vneshniy-akkumulyator-poverbank-50000-mach-22-5-vt-chernyy-1561435763/,0,0,5,Твой пример Ozon URL

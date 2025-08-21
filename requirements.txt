@@ -1,0 +1,8 @@
+aiohttp==3.9.5
+python-dotenv==1.0.1
+pydantic==2.8.2
+beautifulsoup4==4.12.3
+lxml==5.2.2
+pandas==2.2.2
+certifi==2025.6.15
+playwright>=1.54
