@@ -1,4 +1,5 @@
-import os, asyncio, logging
+import os
+import logging
 from typing import Optional
 from contextlib import asynccontextmanager
 
@@ -35,7 +36,7 @@ async def get_rendered_html(url: str, warmup_url: Optional[str] = None, referer:
                 await page0.close()
             page = await ctx.new_page()
             if referer:
-                await context.set_extra_http_headers({'referer': referer})
+                page.set_extra_http_headers({'referer': referer})
             await page.goto(url, wait_until=wait_until, timeout=timeout_ms, referer=referer or None)
             html = await page.content()
             await page.close()
