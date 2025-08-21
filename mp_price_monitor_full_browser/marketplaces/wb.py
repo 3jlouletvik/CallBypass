@@ -1,5 +1,7 @@
 from typing import Optional, Dict, Any
-import json, re, aiohttp
+import json
+import re
+import aiohttp
 from bs4 import BeautifulSoup
 from utils import fetch, get_default_headers
 from browser import browser_fallback_enabled, get_rendered_html
@@ -16,7 +18,8 @@ def _part(nm: int) -> int: return int(nm // 1000)
 def _basket_urls(nm: int):
     servers = [f"basket-{str(i).zfill(2)}.wb.ru" for i in range(1, 16)]
     servers += [f"static-basket-{str(i).zfill(2)}.wbbasket.ru" for i in range(1, 16)]
-    v = _vol(nm); p = _part(nm)
+    v = _vol(nm)
+    p = _part(nm)
     for host in servers:
         yield f"https://{host}/vol{v}/part{p}/{nm}/info/ru/card.json"
 
@@ -90,7 +93,8 @@ async def _try_html(session: aiohttp.ClientSession, nm: str) -> Optional[Dict[st
 
 async def resolve_and_fetch(session: aiohttp.ClientSession, sku: Optional[str]=None, url: Optional[str]=None):
     nm = None
-    if sku: nm = sku
+    if sku:
+        nm = sku
     elif url:
         m = re.search(r"/catalog/(\d+)/", url)
         if m:

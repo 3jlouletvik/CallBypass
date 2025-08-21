@@ -1,7 +1,8 @@
 from typing import Optional, Dict, Any
-import re, asyncio
+import re
+import asyncio
 from bs4 import BeautifulSoup
-from utils import fetch, get_default_headers
+from utils import get_default_headers
 from browser import browser_fallback_enabled, get_rendered_html
 import aiohttp
 

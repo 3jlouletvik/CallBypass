@@ -1,6 +1,10 @@
-import asyncio, os, logging, ssl
+import asyncio
+import os
+import logging
+import ssl
 from typing import Optional, Dict
-import aiohttp, certifi
+import aiohttp
+import certifi
 
 logger = logging.getLogger(__name__)
 

@@ -1,4 +1,5 @@
-import os, aiohttp
+import os
+import aiohttp
 from typing import Optional
 
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")

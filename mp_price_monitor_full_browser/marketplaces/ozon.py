@@ -1,7 +1,8 @@
 from typing import Optional, Dict, Any
-import re, asyncio
+import re
+import asyncio
 from bs4 import BeautifulSoup
-from utils import fetch, get_default_headers
+from utils import get_default_headers
 from browser import browser_fallback_enabled, get_rendered_html
 import aiohttp
 
@@ -23,7 +24,7 @@ def _extract_json_candidates(html: str):
             yield txt
 
 def _try_parse_json_price(blob: str):
-    import json, re
+    import json
     try:
         data = json.loads(blob)
     except Exception:
@@ -74,7 +75,6 @@ def _try_parse_json_price(blob: str):
         return None
 
 def _find_price_in_blob(blob: str):
-    import re
     p = _try_parse_json_price(blob)
     if p:
         return p
@@ -91,7 +91,6 @@ def _find_price_in_blob(blob: str):
     return None
 
 def _extract_dom_price(html: str):
-    import re
     soup = BeautifulSoup(html, "lxml")
     meta = soup.select_one('meta[itemprop="price"]')
     if meta and meta.get("content"):

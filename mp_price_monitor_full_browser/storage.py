@@ -1,4 +1,6 @@
-import sqlite3, os, time
+import sqlite3
+import os
+import time
 from typing import Optional, Tuple, List
 
 DB_PATH = os.path.join(os.getcwd(), "prices.db")
